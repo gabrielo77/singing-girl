@@ -20,7 +20,20 @@ class Singer(object):
     def sing(self, number):
         """Interfaz publica para convertir numero a texto"""
 
-        if type(number) != Decimal:
+        #aca agrega soporte para numeros negativos.
+        sign = ''
+        try:
+            if number[0] == '-':
+                number = number[1:]
+                sign = 'menos '
+        except TypeError:
+            if number < 0:
+                number = abs(number)
+                sign = 'menos '
+
+        #if type(number) != Decimal:
+        #isinstance me parece mejor porque soporta herencia.
+        if not isinstance(number, Decimal):
             number = Decimal(number)
 
         if number > self.limite:
@@ -29,6 +42,7 @@ class Singer(object):
         else:
             texto = self.__to_text(int(number))
         texto += self.__calcular_decimales(number)
+        texto = sign + texto
 
         return texto
 
