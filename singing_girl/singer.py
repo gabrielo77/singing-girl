@@ -20,21 +20,14 @@ class Singer(object):
     def sing(self, number):
         """Interfaz publica para convertir numero a texto"""
 
-        #aca agrega soporte para numeros negativos.
-        sign = ''
-        try:
-            if number[0] == '-':
-                number = number[1:]
-                sign = 'menos '
-        except TypeError:
-            if number < 0:
-                number = abs(number)
-                sign = 'menos '
-
-        #if type(number) != Decimal:
-        #isinstance me parece mejor porque soporta herencia.
         if not isinstance(number, Decimal):
             number = Decimal(number)
+
+        #aca agrega soporte para numeros negativos.
+        sign = ''
+        if number < 0:
+            number = abs(number)
+            sign = 'menos '
 
         if number > self.limite:
             msg = "El maximo numero procesable es %s" % self.limite
