@@ -51,7 +51,7 @@ class Singer(object):
             else:
                 dec = 0
 
-        if  dec != 0:
+        if dec != 0:
             centavos = int(dec * 100)
             return ' con %s/100' % centavos
         else:

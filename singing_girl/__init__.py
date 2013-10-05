@@ -2,7 +2,6 @@
 from __future__ import print_function
 from .singer import Singer
 
-
 if __name__ == '__main__':
 
     t = Singer()

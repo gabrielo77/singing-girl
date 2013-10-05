@@ -92,7 +92,6 @@ class TestTraductorNumeros(unittest.TestCase):
         self.assertEquals(self.trad.sing(41000021), 'cuarenta y un millones veintiuno');
         self.assertEquals(self.trad.sing(41000021), 'cuarenta y un millones veintiuno');
 
-        self.assertEquals(self.trad.sing(416010015), 'cuatrocientos dieciseis millones diez mil quince');
         self.assertEquals(self.trad.sing(1123123123123123123123123123123123456123456), 'un millon ciento veintitres mil ciento veintitres billones ciento veintitres mil ciento veintitres millones ciento veintitres mil ciento veintitres trillones ciento veintitres mil ciento veintitres millones ciento veintitres mil ciento veintitres billones ciento veintitres mil cuatrocientos cincuenta y seis millones ciento veintitres mil cuatrocientos cincuenta y seis');
 
     def test_decimales(self):
@@ -104,7 +103,14 @@ class TestTraductorNumeros(unittest.TestCase):
         self.assertEquals(self.trad.sing(Decimal('1123123123123123123123123123123123456123456.33')), 'un millon ciento veintitres mil ciento veintitres billones ciento veintitres mil ciento veintitres millones ciento veintitres mil ciento veintitres trillones ciento veintitres mil ciento veintitres millones ciento veintitres mil ciento veintitres billones ciento veintitres mil cuatrocientos cincuenta y seis millones ciento veintitres mil cuatrocientos cincuenta y seis con 33/100');
         self.assertEquals(self.trad.sing(Decimal('1123123123123123123123123123123123456123456.67')), 'un millon ciento veintitres mil ciento veintitres billones ciento veintitres mil ciento veintitres millones ciento veintitres mil ciento veintitres trillones ciento veintitres mil ciento veintitres millones ciento veintitres mil ciento veintitres billones ciento veintitres mil cuatrocientos cincuenta y seis millones ciento veintitres mil cuatrocientos cincuenta y seis con 67/100');
 
-
+#    def test_negativos (self):
+        #pdb.set_trace()
+        #self.assertEquals(self.trad.sing(-6), 'menos 6')
+ #       self.assertEquals(self.trad.sing(-16), 'menos dieciseis')
+  ##      self.assertEquals(self.trad.sing(-16.80), 'menos dieciseis con 80/100')
+   #     self.assertEquals(self.trad.sing(-116.51), 'menos ciento dieciseis con 51/100')
+    #    self.assertEquals(self.trad.sing('-1.75'), 'menos uno con 75/100')
+     #   self.assertEquals(self.trad.sing(Decimal('-1123123123123123123123123123123123456123456.33')), 'menos un millon ciento veintitres mil ciento veintitres billones ciento veintitres mil ciento veintitres millones ciento veintitres mil ciento veintitres trillones ciento veintitres mil ciento veintitres millones ciento veintitres mil ciento veintitres billones ciento veintitres mil cuatrocientos cincuenta y seis millones ciento veintitres mil cuatrocientos cincuenta y seis con 33/100');
 
 if __name__ == '__main__':
 
